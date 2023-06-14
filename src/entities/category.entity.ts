@@ -11,6 +11,6 @@ export class Category {
     @Column({type: 'varchar', length: 45, unique: true, nullable: false})
     category_name: string;
 
-    /* @OneToMany(() => Weapon, (Weapon) => Weapon.category)
-    weapon: Weapon[];  */
+    @OneToMany(() => Weapon, (Weapon) => Weapon.category)
+    weapon: Weapon[]; 
 }

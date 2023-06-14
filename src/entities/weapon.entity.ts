@@ -21,7 +21,6 @@ export class Weapon {
     @Column({ type: 'decimal', precision: 3, scale: 2 , default: 0})
     weight: number
 
-    /* @ManyToOne(() => Category , (category) => category.weapon)
-    category: Category; */
-
+    @ManyToOne(() => Category , (category) => category.weapon)
+    category: Category;
 }
