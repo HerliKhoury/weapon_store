@@ -1,0 +1,25 @@
+{
+  "name": "weapon_store",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node-dev --rs --cls --ignore-watch node_modules src/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^20.3.1",
+    "dotenv": "^16.1.4",
+    "express": "^4.18.2",
+    "pg": "^8.11.0",
+    "reflect-metadata": "^0.1.13",
+    "ts-node-dev": "^2.0.0",
+    "typeorm": "^0.3.16"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17"
+  }
+}
