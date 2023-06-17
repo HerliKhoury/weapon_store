@@ -10,8 +10,7 @@ export const createCategoryService = async (
     const categoryRepo: Repository<Category> = AppDataSource.getRepository(Category);
 
     const newCategory: TCategory =  categoryRepo.create(newCategoryData);
-    console.log(newCategory)
-
+    
     const categoryEntity = await categoryRepo.save(newCategory);
 
     const validCategory: TCategory = categorySchema.parse(categoryEntity);
