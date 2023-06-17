@@ -10,7 +10,7 @@ export class Weapon {
     weapon_name: string;
 
     @Column({ type: 'decimal', default: 0})
-    price: number;
+    price: number | string;
 
     @Column({type: 'varchar', length: 45, nullable: false})
     range: string;
@@ -19,7 +19,7 @@ export class Weapon {
     availability: boolean;
 
     @Column({ type: 'decimal', default: 0})
-    weight: number
+    weight: number | string
 
     @ManyToOne(() => Category , (category) => category.weapon)
     category: Category;
