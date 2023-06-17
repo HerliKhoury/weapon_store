@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const categorySchema = z.object({
-    id: z.number().int().positive(),
+    id: z.number(),
     category_name: z.string().max(45).nonempty()
 });
 

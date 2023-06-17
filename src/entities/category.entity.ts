@@ -3,9 +3,9 @@ import { Weapon } from "./weapon.entity";
 
 
 
-@Entity("category")
+@Entity()
 export class Category {
-    @PrimaryGeneratedColumn('increment')
+    @PrimaryGeneratedColumn()
     id: number;
 
     @Column({type: 'varchar', length: 45, unique: true, nullable: false})
