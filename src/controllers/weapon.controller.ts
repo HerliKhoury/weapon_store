@@ -1,9 +1,10 @@
 import { Request, Response, query } from "express";
-import { TWeapon, TWeaponArr, TWeaponReq } from "../interfaces/weapon.interfaces";
+import { TWeapon, TWeaponArr, TWeaponReq, TWeaponUpdate } from "../interfaces/weapon.interfaces";
 import { createWeaponService } from "../services/weapon/createWeapon.service";
 import { listWeaponsService } from "../services/weapon/listWeapons.service";
 import { deleteWeaponService } from "../services/weapon/deleteWeapon.service";
 import { catchWeaponByIdService } from "../services/weapon/catchWeaponById.service";
+import { updateWeaponByIdService } from "../services/weapon/updateWeaponById.service";
 
 export const createWeaponController = async(
     req: Request,
@@ -46,4 +47,16 @@ export const catchWeaponByIdController = async(
     const weaponFound: TWeapon = await catchWeaponByIdService(weaponId);
 
     return res.status(200).json(weaponFound);
+};
+
+export const updateWeaponByIdController = async(
+    req: Request,
+    res: Response
+): Promise<Response> => {
+    const weaponId: number = parseInt(req.params.id);
+    const weaponData: TWeaponUpdate = req.body;
+
+    const updatedWeapon: TWeapon = await updateWeaponByIdService(weaponId, weaponData);
+
+    return res.status(200).json(updatedWeapon);
 };
