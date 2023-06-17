@@ -1,10 +1,10 @@
 import { Router } from "express";
-import { createWeaponController, listAllWeaponsControler } from "../controllers/weapon.controller";
+import { catchWeaponByIdController, createWeaponController, deleteWeaponController, listAllWeaponsControler } from "../controllers/weapon.controller";
 
 export const weaponRoutes: Router = Router();
 
 weaponRoutes.post("", createWeaponController);
 weaponRoutes.get("", listAllWeaponsControler);
-weaponRoutes.get("/:id", );
+weaponRoutes.get("/:id", catchWeaponByIdController);
 weaponRoutes.patch("",);
-weaponRoutes.delete("",);
+weaponRoutes.delete("/:id", deleteWeaponController);
